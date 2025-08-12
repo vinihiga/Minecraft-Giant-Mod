@@ -1,34 +1,39 @@
 # Giant Mod
 
-O **Giant Mod** é um mod para Minecraft Forge 1.21.8 que permite alterar a altura do jogador durante o jogo, tornando-o gigante ou voltando ao tamanho normal com o pressionar de uma tecla.
+The Giant Mod is a mod for Minecraft Forge 1.21.8 that lets you change the player's height during the game, either making them giant or returning to normal size with the press of a key.
 
-## Funcionalidades
+Remember, you can also squash enemies with your feet. Mwahaha!
 
-- Alteração da escala do jogador usando as teclas F9 (tamanho normal) e F10 (tamanho gigante).
-- Mensagem personalizada exibida na tela ao mudar de tamanho.
+### Features
 
-## Instalação
+Change the player's scale using the F9 key (normal size) and F10 key (giant size).
 
-1. Baixe e instale o [Minecraft Forge](https://files.minecraftforge.net/) compatível com a versão 1.21.8.
-2. Baixe o arquivo `.jar` do Giant Mod.
-3. Coloque o arquivo `.jar` na pasta `mods` do seu Minecraft.
+A custom message is displayed on the screen when you change size.
 
-## Como Usar
+### Installation
 
-- Pressione **F9** para voltar ao tamanho normal.
-- Pressione **F10** para se tornar gigante.
-- Uma mensagem será exibida informando a nova altura.
+1. Download and install Minecraft Forge compatible with version 1.21.8.
+2. Compile the code using your IDE of preference.
 
-## Créditos
+### How to Use
 
-Autor: Vinicius Higa  
-Licença: All Rights Reserved
+Press F9 to return to normal size.
 
-## Requisitos
+Press F10 to become giant.
 
-- Minecraft 1.21.8
-- Forge 58.0.2 ou superior
+A message will be displayed informing you of the new height.
 
-## Contribuição
+### Credits
 
-Pull requests e sugestões são bem-vindas!
+Author: Vinicius Higa
+License: All Rights Reserved
+
+### Requirements
+
+Minecraft 1.21.8
+
+Forge 58.0.2 or higher
+
+### Contribution
+
+Pull requests and suggestions are welcome!
