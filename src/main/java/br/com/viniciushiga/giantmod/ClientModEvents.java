@@ -9,6 +9,7 @@ import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.phys.AABB;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.event.TickEvent;
@@ -27,6 +28,9 @@ public class ClientModEvents {
     private class Constants {
         private static final double regularHeight = 1.0;
         private static final double giantHeight = 10.0;
+
+        private static final double regularSpeed = 0.1;
+        private static final double giantSpeed = 1.0;
     }
 
     @SubscribeEvent
@@ -38,14 +42,17 @@ public class ClientModEvents {
         }
 
         var scaleAttribute = localPlayer.getAttribute(Attributes.SCALE);
+        var speedAttribute = localPlayer.getAttribute(Attributes.MOVEMENT_SPEED);
 
         if (keyEvent.getKey() == GLFW.GLFW_KEY_F9 && keyEvent.getAction() == GLFW.GLFW_PRESS) {
             isGiantMode = false;
             scaleAttribute.setBaseValue(Constants.regularHeight);
+            speedAttribute.setBaseValue(Constants.regularSpeed);
             ClientModEvents.sendUIMessage(localPlayer, Constants.regularHeight);
         } else if (keyEvent.getKey() == GLFW.GLFW_KEY_F10 && keyEvent.getAction() == GLFW.GLFW_PRESS) {
             isGiantMode = true;
             scaleAttribute.setBaseValue(Constants.giantHeight);
+            speedAttribute.setBaseValue(Constants.giantSpeed);
             ClientModEvents.sendUIMessage(localPlayer, Constants.giantHeight);
         }
     }
@@ -56,7 +63,7 @@ public class ClientModEvents {
             return;
         }
 
-        var searchBox = event.player.getBoundingBox().inflate(10.0f);
+        var searchBox = event.player.getBoundingBox();
 
         event
             .player
